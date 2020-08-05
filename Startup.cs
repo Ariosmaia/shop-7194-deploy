@@ -81,11 +81,11 @@ namespace Shop
 			// tudo que eu quiser sobre o ambiente de desenvolvimento
 			IWebHostEnvironment env)
 		{
-			// if (env.IsDevelopment())
-			// {
+			if (env.IsDevelopment())
+			{
 				// detalher do erro
 				app.UseDeveloperExceptionPage();
-			//}
+			}
 
 			// forçar a api responde somente a https
 			app.UseHttpsRedirection();
