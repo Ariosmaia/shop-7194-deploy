@@ -62,8 +62,8 @@ namespace Shop
 				};
 			});
 
-			services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-			// services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+			// services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+			services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 			
 			// O AddDbContext já faz a função o AddScoped
 			// services.AddScoped<DataContext, DataContext>();
@@ -81,11 +81,11 @@ namespace Shop
 			// tudo que eu quiser sobre o ambiente de desenvolvimento
 			IWebHostEnvironment env)
 		{
-			if (env.IsDevelopment())
-			{
+			// if (env.IsDevelopment())
+			// {
 				// detalher do erro
 				app.UseDeveloperExceptionPage();
-			}
+			//}
 
 			// forçar a api responde somente a https
 			app.UseHttpsRedirection();
